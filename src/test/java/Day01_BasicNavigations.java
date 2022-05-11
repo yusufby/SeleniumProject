@@ -68,6 +68,7 @@ public class Day01_BasicNavigations {
 
 ////
 
+//when you write pwd it shows the files path in terminal
 
     }
 
