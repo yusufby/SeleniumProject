@@ -65,8 +65,24 @@ public class Day01_BasicNavigations {
          * navigate().to() accept string or URL as parameter
          * navigate has more options : go back, forward, refresh
          * */
+        //test folder is used for automation framework
 
-////
+        //developers do unit testing
+
+        /*target folder*/
+        //target has compiled files
+        //it will be reports
+
+        /*Pom.eml is the most important file on the maven project.
+        this file is used to manage projects.
+        this may have
+        dependencies
+        plugins
+        profiles
+        */
+
+        //External libraries:when we add dependencies , it will import to external library
+
 
 
     }
