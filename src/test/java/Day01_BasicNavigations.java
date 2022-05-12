@@ -42,7 +42,7 @@ public class Day01_BasicNavigations {
         driver.close();
 
         /*2.way of closing*/
-       // driver.quit();
+       // driver.quit();//stronger than quit
 
         /*What is the difference between quit and close ?*/
         //first both closes the driver(browser)
@@ -84,7 +84,7 @@ public class Day01_BasicNavigations {
         //External libraries:when we add dependencies , it will import to external library
 
 
-//when you write pwd it shows the files path in terminal
+        //when you write pwd it shows the files path in terminal
 
     }
 
