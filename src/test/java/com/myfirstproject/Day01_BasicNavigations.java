@@ -12,7 +12,7 @@ public class Day01_BasicNavigations {
     //    Create main method
     public static void main(String[] args) {
 
-        //    Set Path
+        //    Set Path  use WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver_win32/chromedriver.exe");//windows
 
         //    Create chrome driver
