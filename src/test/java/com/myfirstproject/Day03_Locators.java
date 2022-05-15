@@ -48,14 +48,19 @@ public class Day03_Locators {
         String idElementText=idElement.getText();
         Assert.assertEquals("testtechproed@gmail.com",idElementText);
 
-        // ALTERNATIVELY. But this below code is not so clear. So we should write anderstable codes.
+        /*ALTERNATIVELY. But this below code is not so clear. So we should write understandable codes.*/
         //Assert.assertEquals("testtechproed@gmail.com",driver.findElement(By.className("navbar-text")).getText());
 
 
 
 //        Verify the Addresses and Sign Out texts are displayed
-       /* Addresses is a link. So I can use linkText or partialLinkText*/
-        driver.findElement(By.linkText("Addresses"));
+       /* Addresses is a link. So I can use linkText or partialLinkText only for links*/
+        WebElement addresses=driver.findElement(By.linkText("Addresses"));
+
+        //isDisplayed() is used to verify is an element is displayed on the page.
+        // it returns true, if it exists, if it returns false, it does not exist on the page
+        Assert.assertTrue(addresses.isDisplayed());
+
         /*
          * What is the difference between linkText and partialLinkText?
          *
@@ -73,8 +78,8 @@ public class Day03_Locators {
          * When is partialLinkText is useful?
          * - if link text is too long
          * - if there is a space before or after the text
-         * * *** isDisplayed() is used to verfiy is an element is displayed on the page
-         * It returns true if element is exist, it returns false if element is not exist on the page
+         * * *** isDisplayed() is used to verify is an element is displayed on the page
+         * It returns true if element exists, it returns false if element is not exist on the page
          * */
 
 
@@ -89,8 +94,28 @@ public class Day03_Locators {
         int numberOfLinks=allLinks.size();
         System.out.println("Number of links : "+numberOfLinks);
 
+
+//      Verify sign out texts are displayed
+        WebElement signOut=driver.findElement(By.partialLinkText("Sign out"));
+        Assert.assertTrue(signOut.isDisplayed());
+
+
 //        Sign out from the page
         driver.findElement(By.linkText("Sign out")).click();
+
+
+        //after sign out we must do verification to make sure you sign out successfully
+        boolean isSignOut=driver.getCurrentUrl().equals("http://a.testaddressbook.com/sign_in");
+        Assert.assertTrue(isSignOut);
+
+        //  Alternatively, we can use a unique element on the sign in page
+        boolean isSignOut1=driver.findElement(By.name("commit")).isDisplayed();
+        Assert.assertTrue(isSignOut1);
+
+
+
+
+
     }
 
     /*How many operators are there in Selenium?  8 */

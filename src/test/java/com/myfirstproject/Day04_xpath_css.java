@@ -7,6 +7,10 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+/*Absolute xpath:you go from parent to child one by one (we do not use this.it is long)
+*Relative xpath:  you go target element. that's why we use this xpath.*/
+
+
 
 public class Day04_xpath_css {
     WebDriver driver;
