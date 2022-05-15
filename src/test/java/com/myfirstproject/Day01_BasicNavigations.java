@@ -43,6 +43,7 @@ public class Day01_BasicNavigations {
         // Close/Quit the browser
         driver.close();
 
+
         /*2.way of closing*/
        // driver.quit();//stronger than quit
 
