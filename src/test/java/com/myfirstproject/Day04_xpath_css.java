@@ -32,9 +32,14 @@ public class Day04_xpath_css {
     }
     @Test
     public void css(){
-        /*1. Locationg username, password, and button usign cssSelector
-        There is no // 2. There is no @ symbol */
+        /*1. Location username, password, and button using cssSelector
+        There is no // 2. There is no @ symbol in cssSelector*/
         driver.findElement(By.cssSelector("input[type='email']")).sendKeys("testtechproed@gmail.com");
+
+        //Alternative cssLocator for email:input#session_email OR  #session_email
+        //Alternative ccsLocator for email :input.form-control  OR  .form-control
+        /*NOTE: # =id  and .=class
+        */
         driver.findElement(By.cssSelector("input[type='password']")).sendKeys("Test1234!");
         driver.findElement(By.cssSelector("input[type='submit']")).click();
     }
@@ -44,3 +49,11 @@ public class Day04_xpath_css {
         driver.quit();
     }
 }
+        //Functional testing :smoke test, regression test and security testing
+        /*Selenium can be used to test UI, API and Database testing */
+
+
+        //we can copy the relative xpath using chrome dev tool.it is not recommended
+        /*because chrome can give the combination of ABSOLUTE and RELATIVE*/
+        // * means any
+
