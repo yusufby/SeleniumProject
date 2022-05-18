@@ -33,7 +33,7 @@ Then click on the radio buttons for your gender if they are not selected*/
 //
 //        TEST CASE:
 //        Click on Create new account
-        driver.findElement(By.linkText("Create new account")).click();
+        driver.findElement(By.linkText("Create New Account")).click();
 //        Enter first name
         driver.findElement(By.name("firstname")).sendKeys("test f name");
 //        Enter last name

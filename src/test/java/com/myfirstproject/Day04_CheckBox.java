@@ -29,13 +29,14 @@ public class Day04_CheckBox {
     }
 
     @Test
-    public void checkbox() {
+    public void checkbox() throws InterruptedException {
 //        Create test method and complete the following task.
 //        Go to https://the-internet.herokuapp.com/checkboxes
 //        Locate the elements of checkboxes
-        WebElement checkbox1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
+         WebElement checkbox1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
         WebElement checkbox2 = driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
 //        Then click on checkbox1 if box is NOT selected
+        Thread.sleep(5000);
         if (!checkbox1.isSelected()) {//if checkbox1 is not selected
             checkbox1.click();
         }
@@ -45,7 +46,9 @@ public class Day04_CheckBox {
         }
 
 //        Then verify that checkbox1 is checked.
+    Assert.assertTrue(checkbox1.isSelected());
 
+        driver.quit();
     }
 
 
