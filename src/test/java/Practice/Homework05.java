@@ -26,7 +26,7 @@ public class Homework05 {
     @Test
     public void test01(){
 
-        driver.findElement(By.xpath("//input[@type='checkbox'])[1]"));
+
     }
 
 

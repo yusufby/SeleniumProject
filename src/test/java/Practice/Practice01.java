@@ -37,8 +37,15 @@ public class Practice01 {
     }
 
     @Test
-    public void test01(){
+    public void test01() throws InterruptedException {
     driver.get("https://www.google.com/");
+    Thread.sleep(4000);
+    driver.navigate().to("https://www.amazon.com/");
+    driver.navigate().back();
+        Thread.sleep(4000);
+    driver.navigate().forward();
+        Thread.sleep(4000);
+    driver.navigate().refresh();
 
 
 
@@ -47,6 +54,7 @@ public class Practice01 {
     public void tearDown(){
         driver.quit();
     }
+
 
 
 
