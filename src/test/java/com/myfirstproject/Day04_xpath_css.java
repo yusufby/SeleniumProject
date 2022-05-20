@@ -1,5 +1,6 @@
 package com.myfirstproject;
 
+import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -14,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Day04_xpath_css {
     WebDriver driver;
+    Faker faker=new Faker();
+
     @Before
     public void setUp(){
 //        Prerequisites
