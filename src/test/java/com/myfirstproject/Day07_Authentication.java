@@ -5,7 +5,10 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import utilities.TestBase;
 
+
 public class Day07_Authentication extends TestBase {
+
+    //Authentication means : Verifying the identity of a user
 
     @Test
     public void basicAuthentication(){
@@ -18,4 +21,6 @@ public class Day07_Authentication extends TestBase {
 //        Assertion
         Assert.assertTrue(message.contains("Congratulations"));
     }
+
+
 }
