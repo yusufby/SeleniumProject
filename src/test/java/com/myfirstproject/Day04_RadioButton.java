@@ -73,7 +73,7 @@ Then click on the radio buttons for your gender if they are not selected*/
     }
     @After
     public void tearDown(){
-        driver.quit();
+     //   driver.quit();
     }
 }
 
