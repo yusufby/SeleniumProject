@@ -13,7 +13,7 @@ public class Day08_FileUpload extends TestBase {
         WebElement chooseFile = driver.findElement(By.id("file-upload"));
 
 //        find the path of the file that you want to upload
-        String filePath ="/Users/techproed/Desktop/logo.jpeg";
+        String filePath ="C:\\Users\\user\\Desktop\\selenium.png";
 
 //        sendKeys(path);
         chooseFile.sendKeys(filePath);
@@ -21,6 +21,7 @@ public class Day08_FileUpload extends TestBase {
 //        click on Upload button
         WebElement upload = driver.findElement(By.id("file-submit"));
         upload.click();
+
 
 //        Verify the upload message
         String uploadedMessage = driver.findElement(By.xpath("//h3")).getText();
@@ -36,5 +37,6 @@ public class Day08_FileUpload extends TestBase {
          *   -verify message : File Uploaded!
          *           -get the text of the message and do assertion
          * */
+
     }
 }
