@@ -59,7 +59,7 @@ https://the-internet.herokuapp.com/iframe  */
     //    Alternatively, I can also use findElements with xpath like
     //    driver.findElements(By.xpath(//iframe)).size();
 
-    /*Can you five me the exact syntax?*/
+    /*Can you give me the exact syntax?*/
     //Sure.
     // driver.findElements(By.tagName(“iframe”)).size()*/
 

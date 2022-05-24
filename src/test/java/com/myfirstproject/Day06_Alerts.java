@@ -21,15 +21,6 @@ dismissAlert()=> click on the second alert, verify text "I am a JS Confirm”,
 sendKeysAlert()=> click on the third alert, verify text “I am a JS prompt”,
     type “Hello World”, click OK, and Verify “You entered: Hello Word”*/
 
-    //    acceptAlert() => click on the first alert,
-//    verify the text “I am a JS Alert” ,
-//    click OK ,
-//    and Verify “You successfully clicked an alert”
-//
-//    dismissAlert()=> click on the second alert,
-//    verify text "I am a JS Confirm”, click cancel, and Verify “You clicked: Cancel”
-//    sendKeysAlert()=> click on the third alert,
-//    verify text “I am a JS prompt”, type “Hello World”, click OK, and Verify “You entered: Hello Word”
     @Test
     public void acceptAlert() throws InterruptedException {
 //    acceptAlert() => click on the first alert, verify the text “I am a JS Alert” ,
@@ -110,7 +101,8 @@ sendKeysAlert()=> click on the third alert, verify text “I am a JS prompt”,
             //==> index, id/name,web element
 
         /*How do you understand if iframe on the page or not? */
-        // i inspect the page to see if there is an iframe element manually //iframe returns the number of iframe
+        // i inspect the page to see if there is an iframe element manually
+        // iframe returns the number of iframe
         //Driver.findElement(By.xpath(//iframe));
         //Driver.findElement(By.xpath(//xpath));
 
