@@ -3,7 +3,7 @@ package com.myfirstproject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import utilities.TestBase;
+import com.myfirstproject.utilities.TestBase;
 
 
 public class Day07_Authentication extends TestBase {

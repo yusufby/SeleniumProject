@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.TestBase;
+import com.myfirstproject.utilities.TestBase;
 
 public class Day08_FileUpload extends TestBase {
     @Test

@@ -1,7 +1,7 @@
 package com.myfirstproject;
 import org.junit.Test;
 import org.openqa.selenium.WindowType;
-import utilities.TestBase;
+import com.myfirstproject.utilities.TestBase;
 
 public class Day07_NewTabs_Sel4 extends TestBase {
     @Test

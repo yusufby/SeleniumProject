@@ -2,7 +2,7 @@ package com.myfirstproject;
 
 import org.junit.Test;
 import org.openqa.selenium.Cookie;
-import utilities.TestBase;
+import com.myfirstproject.utilities.TestBase;
 
 import java.util.Set;
 

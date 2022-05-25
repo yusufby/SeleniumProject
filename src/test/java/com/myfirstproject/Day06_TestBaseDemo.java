@@ -1,7 +1,7 @@
 package com.myfirstproject;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import utilities.TestBase;
+import com.myfirstproject.utilities.TestBase;
 
 public class Day06_TestBaseDemo extends TestBase {
     WebDriver driver;

@@ -3,7 +3,7 @@ package com.myfirstproject;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import utilities.TestBase;
+import com.myfirstproject.utilities.TestBase;
 
 public class Day08_Actions3 extends TestBase {
 
