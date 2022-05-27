@@ -23,8 +23,13 @@ public class Day10_ScreenOfSpecificElements  extends  TestBase{
         File finalPath = new File("./test-output/elements/googleLogo.jpeg");
         FileUtils.copyFile(logoImage,finalPath);
 
-        //homework
-        // get the screenshot of "Oturum açın" button
+
+        // get the screenshot of "sign in " button
+        WebElement signInButton=driver.findElement(By.xpath("//*[.='Sign in']"));
+        File signInPath= new File("./test-output/elements/signinpath.jpeg");
+        File signInImage=signInButton.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(signInImage,signInPath);
+
 
     }
 }

@@ -38,7 +38,24 @@ public class Day10_Screenshots extends TestBase {
      *
      * */
 
+    public void takeScreenShot() throws IOException {
+        //Taking screenshot using getScreenShotAs
+       File image= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
+       /*Alternatively */
+        //TakesScreenshot ts=(TakesScreenshot)driver;
+       // File image2=ts.getScreenshotAs(OutputType.FILE);
+
+
+        String currentDate=new SimpleDateFormat("yyMMddhhmmss").format(new Date());
+        System.out.println(currentDate);
+
+
+        //2. we will save the image in this path
+        String path =System.getProperty("user.dir")+"/test-output/Screenshots/" +currentDate + "test-image.png";
+        File finalPath=new File(path);
+        FileUtils.copyFile(image, finalPath);
+    }
 
 
     @Test
@@ -49,18 +66,17 @@ public class Day10_Screenshots extends TestBase {
 
 
 
-       //takeScreenShot();
+       takeScreenShot();
 
-        driver.findElement(By.name("q")).sendKeys("Adana kebap" + Keys.ENTER);
-       // takeScreenShot();
+
+      driver.findElement(By.name("q")).sendKeys("Adana kebap" + Keys.ENTER);
+        takeScreenShot();
         //getScreenshotAs
 
     }
 
-
-
     /*
-     * How do you get screenshot in your automation framework?
+     * How do you capture screenshot in your automation framework? how do you get screenshot in selenium ?
      * I can use getScreenshotAs() method to capture the screenshot
      * Actually we will have reusable methods for screenshots.
      *
