@@ -52,7 +52,8 @@ public class Day10_Screenshots extends TestBase {
 
 
         //2. we will save the image in this path
-        String path =System.getProperty("user.dir")+"/test-output/Screenshots/" +currentDate + "test-image.png";
+        String path =System.getProperty
+                ("user.dir")+"/test-output/Screenshots/" +currentDate + "test-image.png";
         File finalPath=new File(path);
         FileUtils.copyFile(image, finalPath);
     }

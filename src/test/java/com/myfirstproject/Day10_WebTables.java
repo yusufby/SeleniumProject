@@ -55,7 +55,8 @@ public class Day10_WebTables extends TestBase {
     public void getRows(){
 //       Task 2 : Print All Rows (including header)
         driver.get("https://the-internet.herokuapp.com/tables");
-        List<WebElement> allRows = driver.findElements(By.xpath("//table[@id='table1']//tr")); ////table[@id='table1']//tbody//tr
+        List<WebElement> allRows = driver.findElements
+                (By.xpath("//table[@id='table1']//tr")); ////table[@id='table1']//tbody//tr
         System.out.println("****** Print Rows ********");
         for(WebElement each : allRows){
             System.out.println(each.getText());
@@ -66,7 +67,8 @@ public class Day10_WebTables extends TestBase {
     public void getLastRow(){
 //       Task 3 : Print Last row data only
         driver.get("https://the-internet.herokuapp.com/tables");
-        WebElement lastRow = driver.findElement(By.xpath("//table[@id='table1']//tbody//tr[last()]"));
+        WebElement lastRow = driver.findElement(By.xpath
+                ("//table[@id='table1']//tbody//tr[last()]"));
         System.out.println(lastRow.getText());
     }
 
