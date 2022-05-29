@@ -24,18 +24,12 @@ public class Day10_Screenshots extends TestBase {
     /*
      * In Testing, Screenshot is very essential
      * Documentation of test results
-     *
      * Test Reports should have test cases(test steps), test result(fails, passes), screenshots
-     *
      * If our test fails, we need screenshot to raise a bug ticket.
      * If our test passes, we should get a screenshot as a proof.
-     *
      * With Selenium 3 & 4 we can get screenshot by using TakeScreenshot class and getScreenshotAs()
      * to be able to get screenshot of a webpage
-     *
      * With Selenium 4, we can take screenshot of a specific element
-     *
-     *
      * */
 
     public void takeScreenShot() throws IOException {
@@ -44,12 +38,10 @@ public class Day10_Screenshots extends TestBase {
 
        /*Alternatively */
         //TakesScreenshot ts=(TakesScreenshot)driver;
-       // File image2=ts.getScreenshotAs(OutputType.FILE);
-
+        // File image2=ts.getScreenshotAs(OutputType.FILE);
 
         String currentDate=new SimpleDateFormat("yyMMddhhmmss").format(new Date());
         System.out.println(currentDate);
-
 
         //2. we will save the image in this path
         String path =System.getProperty
@@ -64,25 +56,18 @@ public class Day10_Screenshots extends TestBase {
 
 
         driver.get("https://www.google.com");
-
-
-
        takeScreenShot();
-
 
       driver.findElement(By.name("q")).sendKeys("Adana kebap" + Keys.ENTER);
         takeScreenShot();
         //getScreenshotAs
 
     }
-
     /*
-     * How do you capture screenshot in your automation framework? how do you get screenshot in selenium ?
+     * How do you capture screenshot in your automation framework?
+     * how do you get screenshot in selenium ?
      * I can use getScreenshotAs() method to capture the screenshot
      * Actually we will have reusable methods for screenshots.
-     *
-     *
-     *
      * */
 
 

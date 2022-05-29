@@ -76,8 +76,9 @@ public class Day10_WebTables extends TestBase {
     @Test
     public void getColumn5(){
 //       Task 4 : Print column 5 data in the table body
-        driver.get("https://the-internet.herokuapp.com/tables");     //table[@id='table1']//tbody//tr//td[5]
-        List<WebElement> column5data = driver.findElements(By.xpath("//table[@id='table1']//tbody//tr//td[last()-1]"));
+        driver.get("https://the-internet.herokuapp.com/tables");//table[@id='table1']//tbody//tr//td[5]
+        List<WebElement> column5data = driver.findElements
+                (By.xpath("//table[@id='table1']//tbody//tr//td[last()-1]"));
         for(WebElement each : column5data){
             System.out.println(each.getText());
         }

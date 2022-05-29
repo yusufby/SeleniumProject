@@ -50,7 +50,8 @@ SET UP
 
 //        Report is complete. Now we just need to create test using extentTest object
         extentTest = extentReports.
-                createTest("My Project Extent Report","This is for smoke test report");
+                createTest("My Project Extent Report",
+                        "This is for smoke test report");
 
 
 //        Done with configuration ......
@@ -59,6 +60,9 @@ SET UP
         extentTest.info("User goes to google home page");
         extentTest.pass("User goes to google home page");
         extentTest.fail("User goes to google home page");
+        extentTest.skip("User goes to google home page");
+        extentTest.warning("User goes to google home page");
+
 
     driver.get("https://www.google.com/");
     driver.findElement(By.xpath("//button[@id='L2AGLb']")).click();
@@ -69,6 +73,42 @@ SET UP
 
    //Ending the report
    extentReports.flush();
+
+            /*How do you get the report ?*/
+        //When I do manual testing, i capture the screenshot manually and save and a word
+        //doc, then the upload the document to the Jira
+        //when I automate the user  story, I use extent report for generating the test reports
+        //Extent report is customizable
+        //I can configure the extent reports based on the project information
+        //in my project, we customized extent report in a way that
+        // it takes the screenshot automatically k when the test case fails
+
+        /*What is the advantages of extent reports? */
+        //open free source
+        //works with different browsers and platform
+        //it works with different frameworks like junit, testng, cucumber
+        //we can log each step
+        //it is customizable
+
+        /*How extent reports generates reports? How extend reports work ? */
+        //We are using maven, i have extent reports dependency
+        // i have a reusable class, in that class i have extent report configuration
+        //Extent reports
+        //Extent HTML Reporter ========>are users for generating reports
+        //Extent test
+
+        /*For example : extent reports and extent html reporter can be used for adding custom information
+        * such as platform, browser, environment....and extent test object is used
+        * for logging the info such as pass, fail , working , skip*/
+
+        //Where do we get our dependency?
+        /*We have company repository, i check the repo and get the repository*/
+        //What is the dependency is not in your company repository, then what questions?
+        /*I need to raise a request for the dependency so the company
+        can add. i ask  the test lead, tech lead,  the manager*/
+
+
+
 
 
 

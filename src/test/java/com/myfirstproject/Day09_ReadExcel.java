@@ -12,7 +12,7 @@ public class Day09_ReadExcel {
     //workbook means excel file
     //worksheet=eacn open excel tab like sheet1, sheet2,..
     //there is no column from the java perspective
-    /*Apache POI is the java API to access microsof offices*/
+    /*Apache POI is the java API to access microsoft offices*/
     @Test
     public void readExcel() throws IOException {
         String path = ".\\src\\test\\java\\Resources\\Capitals.xlsx";
@@ -20,12 +20,12 @@ public class Day09_ReadExcel {
 
 //        Open the file
         FileInputStream fileInputStream = new FileInputStream(path);
-        //FileINputStream comes from java. we use this file to access file
+        //FileInputStream comes from java. we use this file to access file
 
 
-//        Open the workbook using fileinputstream
+//        Open the workbook using fileInputStream
         Workbook workbook = WorkbookFactory.create(fileInputStream);
-        //workbook adn WorkbookFactory come from Apachi.
+        //workbook adn WorkbookFactory come from apachi.
 
 //        Open the first worksheet
         /*getSheetAt(0); accepts an integer and is used to get the specific sheet
