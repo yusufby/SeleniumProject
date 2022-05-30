@@ -143,6 +143,16 @@ public abstract class TestBase {
        String value= js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
         System.out.println(value);
     }
+    //Changes the color of an element .Params: webElement element, String color
+    public void changeBackgroundColorByJS(WebElement element, String color){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.backgroundColor='"+color+"'",element);
+    }
+    public void addBorderWithJS(WebElement element, String borderStyle){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.border'"+ borderStyle+"' ", element);
+
+    }
 
 
 }
