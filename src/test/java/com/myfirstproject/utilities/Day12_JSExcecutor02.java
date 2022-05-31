@@ -7,6 +7,28 @@ import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
+
+/*What is javascript executor?*/
+//js executor is an API to execute javascript comments in selenium
+
+/*When did you use it ? */
+//when we can not interact with some webElements with a traditional selenium methods
+//for example, when we can not click, scroll, get text...then we can use js executor
+
+/*How do you scroll with selenium?*/
+//There are ways: action class, js executor
+//Actually I am using js executor ,since it is better
+//for example: with js executor ,I can scroll to a specific element(scrollIntoView) or
+// right, left all the way bottom ... we have a reusable method that i can call to scroll
+// on a specific element
+
+/*How do you get the text in an input ?*/
+//I use getText method for getting the text on a page. However, we need to use
+// jsExecutor to get the input value. I have a reusable method to get the value from an input
+
+/*What would you do if your selenium click does not work? */
+//I can use javascript executor click. I can  get the element and click using javascript
+
 public class Day12_JSExcecutor02 extends TestBase {
 
     @Test
