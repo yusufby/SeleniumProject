@@ -1,5 +1,8 @@
 package com.myfirstproject.utilities;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -27,42 +30,73 @@ public abstract class TestBase {
      *
      * */
     protected static WebDriver driver;
-    Faker faker = new Faker();
+    protected ExtentReports extentReports;
+    protected ExtentHtmlReporter extentHtmlReporter;
+    protected ExtentTest extentTest;
 
 
     @Before
-    public void setUp() {
+    public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+//        Whenever this driver is used AND need some wait, then wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
+//        Code about extent reports
+//        Report PATH= creates the html report right under test-output
+        String currentDate = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String path = System.getProperty("user.dir")+"/test-output/report/"+currentDate+"test_report.html";
+
+//      Create html reporter using the path
+        extentHtmlReporter = new ExtentHtmlReporter(path);
+
+//        Create extent report
+        extentReports = new ExtentReports();
+
+//        Add custom information
+        extentReports.setSystemInfo("Environment","Test Environment");
+        extentReports.setSystemInfo("Browser","Chrome");
+        extentReports.setSystemInfo("Application","TechProEd");
+        extentReports.setSystemInfo("SQA","John");
+
+        extentHtmlReporter.config().setDocumentTitle("TechProEd BlueCar");
+        extentHtmlReporter.config().setReportName("TechProEd Extent Report");
+
+//        Attach html and extent reports
+        extentReports.attachReporter(extentHtmlReporter);
+
+//        Report is complete. Now we just need to create test using extentTest object
+        extentTest = extentReports.createTest("My Project Extent Report","This is for smoke test report");
+//        Done with configuration......
+
+
 
     }
+//    @After
+//    public void tearDown(){
+//        driver.quit();
+//        extentReports.flush();
+//    }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
-
-
-    //    Create a reusable method for clicking checkbox
-//    * @param checkboxElement : WebElement of the checkbox
-//    * @param checked : boolean of the checkbox element
-//
-//            * Example: if you want to click when checkbox is checked then checked = true
-//            *         if you want to click when checkbox is not checked then checked = false
-//            *
-//            *         selectCheckBox(checkbox1, true); make sure the checkbox1 is checked
-//    *         selectCheckBox(checkbox1, false); make sure the checkbox1 is unchecked
-//    */
-    public static void selectCheckBox(WebElement checkboxElement, boolean checked) {
-        if (checked) {
-            if (!checkboxElement.isSelected()) {
+    /*
+     * Create a reusable method for clicking checkbox
+     * @param checkboxElement : WebElement of the checkbox
+     * @param checked : boolean of the checkbox element
+     *
+     * Example: if you want to click when checkbox is checked then checked = true
+     *         if you want to click when checkbox is not checked then checked = false
+     *
+     *         selectCheckBox(checkbox1, true); make sure the checkbox1 is checked
+     *         selectCheckBox(checkbox1, false); make sure the checkbox1 is unchecked
+     */
+    public static void selectCheckBox(WebElement checkboxElement, boolean checked){
+        if(checked){
+            if (!checkboxElement.isSelected()){
                 checkboxElement.click();
             }
-        } else {
-            if (checkboxElement.isSelected()) {
+        }else{
+            if (checkboxElement.isSelected()){
                 checkboxElement.click();
             }
         }
@@ -77,81 +111,82 @@ public abstract class TestBase {
         for (String handle : driver.getWindowHandles()) {
             String title = driver.switchTo().window(handle).getTitle();
             if (title.equals(targetTitle)) {
-                System.out.println("Page found : " + driver.getTitle());
+                System.out.println("Page found : "+driver.getTitle());
                 return;
             }
         }
     }
 
+
     public void takeScreenShot() throws IOException {
-        //Taking screenshot using getScreenShotAs
-        File image = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        1. Taking screenshot using getScreenshotAs
+        File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
-        /*Alternatively */
-        //TakesScreenshot ts=(TakesScreenshot)driver;
-        // File image2=ts.getScreenshotAs(OutputType.FILE);
+        /*
+        Alternatively
+        TakesScreenshot ts=(TakesScreenshot)driver;
+        File image = ts.getScreenshotAs(OutputType.FILE);
+         */
 
-        String currentDate = new SimpleDateFormat("yyMMddhhmmss").format(new Date());
-        System.out.println(currentDate);
-
-        //2. we will save the image in this path
-        String path = System.getProperty
-                ("user.dir") + "/test-output/Screenshots/" + currentDate + "test-image.png";
+//        2. We will save the image in this path. using currentDate for getting different name every time
+        String currentDate = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+//        System.out.println(currentDate);
+        String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentDate+"test-image.png";
         File finalPath = new File(path);
-        FileUtils.copyFile(image, finalPath);
-    }
-
-
-    @Test
-    public void scrollIntoViewByJS(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        js.executeScript("arguments[0].scrollIntoView(true)", element);
+        FileUtils.copyFile(image,finalPath);
 
     }
 
-    @Test
-    public void scrollAllDownByJS() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-
+    //  Scrolls onto a specific element. Param : webelement
+    public void scrollIntoViewByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
-
-    @Test
-    public void scrollAllUpByJS() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+    //    Scroll all the way down of a page
+    public void scrollAllDownByJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
-
-    @Test
-    public void clickByJS(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click()", element);
+    //    Scroll al the way up of a page
+    public void scrollAllUpByJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+    //    Click on a specific element. Param: WebElement
+    public void clickByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",element);
+    }
+    //    Set the value of an input using js executor. Params: WebElement element, String text
+//    This method changes the value attribute of an element.
+//    It changes the input text
+    public void setValueByJS(WebElement element, String text){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')",element);
     }
 
-    //Set the value of input using js executor
-    //this method changes the value attribute of an element
-
-    public void setValueByJS(WebElement element, String text) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
-    }
-
-    //get the value of an input. param idOfElement
-    public void getValueByJS(String idOfElement) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-       String value= js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
+    //    get the value of an input. param: idOfElement
+    public void getValueByJS(String idOfElement){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        String value=js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
         System.out.println(value);
+//        How you get get the value of an input box?
+//        We can js executor.
+//        How?
+//        I can get the element using js executor, and get teh value of the element.
+//        For example, I can get the element by id, and use value attribute to get the value of in an input
+//        I have to do this, cause getText in this case does not return teh text in an input
     }
-    //Changes the color of an element .Params: webElement element, String color
+
+    //    Changes the changeBackgroundColorByJS of an element. Params: WebElement element, String color
     public void changeBackgroundColorByJS(WebElement element, String color){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].style.backgroundColor='"+color+"'",element);
     }
-    public void addBorderWithJS(WebElement element, String borderStyle){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].style.border'"+ borderStyle+"' ", element);
 
+    public void addBorderWithJS(WebElement element, String borderStyle){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].style.border='"+borderStyle+"'",element);
     }
 
 
