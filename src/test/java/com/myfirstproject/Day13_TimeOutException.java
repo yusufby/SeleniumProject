@@ -23,7 +23,13 @@ public class Day13_TimeOutException {
             driver.get("https://www.carettahotel.com/");
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("navLogon")));
-
+//        Even tough the problem may not be specifically time out issue, we still get TimeoutException when we use explicit wait
+//        In this case, out locator is wrong and we put 5 seconds wait, and got timeoutException
+//        Reason for timeoutExceptions:
+//        wrong locator + explicit wait,
+//        actual timing problem. for example, the load happens in 10 seconds, but explicit wait is 5 seconds
         }
+        //40 percent you will debug trying to understand the issues
+
     
 }
