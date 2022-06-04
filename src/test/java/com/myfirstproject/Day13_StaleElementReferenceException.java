@@ -25,7 +25,7 @@ public class Day13_StaleElementReferenceException {
         home.click();//StaleElementReferenceException
         /*
          * Solution: 1. relocate the element with a new variable and use that going forward
-         * 2. do not use variable for the same elements goint forward
+         * 2. do not use variable for the same elements going forward
          *
          * */
 

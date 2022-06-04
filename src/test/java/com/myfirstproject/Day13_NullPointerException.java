@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class Day13_NullPointerException {
     WebDriver driver;
     Faker faker;
-
+//means the element is no longer fresh. it is old or no longer available
     @Test
     public void nullPointerException(){
         WebDriverManager.chromedriver().setup();
