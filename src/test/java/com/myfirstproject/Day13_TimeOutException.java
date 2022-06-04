@@ -9,6 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+/*Web driver exception? */
+//when you close the browser , but still want to use that in correctly
+//when the versions of the driver and browsers are not compatible it will give webDriver exception
+/*Solutions*/
+//your design should be good. we should use singleton  Driver to prevent this exception
+//keep drivers up to date that is compatible with the browser version
 
 public class Day13_TimeOutException {
         WebDriver driver;

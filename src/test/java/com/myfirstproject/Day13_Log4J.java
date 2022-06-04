@@ -6,7 +6,15 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
+/*Log4j is an external API to log information in the console OR in a file */
+// We use Log4j for printing information
+
+/*How to set up?*/
+//1.)log4j-api
+//2.)log4j-core
+
 public class Day13_Log4J  extends TestBase {
+    //Create an object
     private static Logger logger = LogManager.getLogger(Day13_Log4J.class.getName());
     @Test
     public void log4JTest(){

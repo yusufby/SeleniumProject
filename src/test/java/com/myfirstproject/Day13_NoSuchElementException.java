@@ -16,12 +16,36 @@ import com.myfirstproject.utilities.TestBase;
 //InvalidSelectorException
 //JavascriptException
 //InvalidArgumentException
+//WebDriver exception
 
 /*What type of exceptions do you get in selenium?*/
-//
-//
-//
-//
+//NoSuchElementException
+//NullPointerException
+//WebDriverException
+//TimeOutException
+//StaleElementReference Exception
+
+
+/*What is your solution? */
+//read the error message and know what is the error and where it is
+//in general, because of timing issue, wrong locator, or iframe/windows/alerts
+//each error has specific solutions but in general,
+// I debug code and do some research then execute the code one more time after the fix
+
+/*What type waits do you use ?*/
+//I use implicit and explicit wait .
+
+/*What wait do you prefer?*/
+//Explicit wait works better in some cases.when I use explicit wait,
+// and still see timeout exception, then there can be other issues such as incorrect locator
+
+/*What do you prefer that wait?*/
+//I prefer explicit wait when I need to use an expected condition such
+// as element is not visible, then explicit wait handles/
+
+/*How do you resolve synchronization issue?*/
+//I use implicit and explicit wait. in my driver class, I already have implicit wait ,
+// then handles most of the wait issues, but when it is not enough then i use explicit wait.
 
 
 public class Day13_NoSuchElementException extends TestBase {
