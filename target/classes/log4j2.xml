@@ -23,7 +23,7 @@
     additivity="false" avoids duplicated messages that can come from parent levels.
       This should be used with Logger-->
     <Loggers>
-        <Logger name="com.myfirstproject" level="trace" additivity="false">
+        <Logger name="com.myfirstproject.tests.Day14_Log4J" level="trace" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="file"/>
         </Logger>

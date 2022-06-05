@@ -93,7 +93,7 @@ public class Day03_Locators {
         List<WebElement> allLinks = driver.findElements(By.tagName("a"));//returns all elements whose tag is "a"
         int numberOfLinks=allLinks.size();
         System.out.println("Number of links : "+numberOfLinks);
-
+        System.out.println("=====================");
 
 //      Verify sign out texts are displayed
         WebElement signOut=driver.findElement(By.partialLinkText("Sign out"));
