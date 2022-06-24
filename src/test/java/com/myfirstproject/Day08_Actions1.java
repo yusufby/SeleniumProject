@@ -13,7 +13,7 @@ public class Day08_Actions1 extends TestBase {
 
 //        Given user is on the https://the-internet.herokuapp.com/context_menu
         driver.get("https://the-internet.herokuapp.com/context_menu");
-//        When use Right clicks on the box
+//        When use Right-clicks on the box
         WebElement box = driver.findElement(By.xpath("//div[@id='hot-spot']"));
 //        box.click();//normal click no need actions class
 

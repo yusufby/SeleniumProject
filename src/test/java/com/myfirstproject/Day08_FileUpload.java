@@ -40,3 +40,11 @@ public class Day08_FileUpload extends TestBase {
 
     }
 }
+/*Maven build life cycle */
+//validate:make sure project is correct and necessary information is available
+//compile:it will compile the actual source code
+//Test:Testing the source code which means unit tests
+//Package: it will take compiled source code in its format of distribution
+//Verify: check the results of your integrated tests
+//Install: install in local repository
+//Deploy:install in remote repository
