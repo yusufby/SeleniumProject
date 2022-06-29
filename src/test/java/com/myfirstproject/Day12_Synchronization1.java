@@ -86,7 +86,7 @@ public class Day12_Synchronization1 extends TestBase{
     //It depends on the test case. But explicit wait works better in some cases.
     // So I prefer explicit wait in some cases. For example: when i work with
     // dynamically loaded elements, then explicit wait works better for waiting
-    // and locating the elements.
+    // and locating the elements.S
 
     /*What might be the reason of the case failure? */
     //wrong locator-typo-wrong values

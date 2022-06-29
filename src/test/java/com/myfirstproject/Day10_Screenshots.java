@@ -19,7 +19,7 @@ public class Day10_Screenshots extends TestBase {
      * TEST RESULT(PASSES OR FAILED)
         * if a test case fails then we should take screenshot for raising the bug
         *if a test case pass, then we should take screenshot as a proof
-     *
+     *s
     * */
     /*
      * In Testing, Screenshot is very essential
@@ -65,7 +65,7 @@ public class Day10_Screenshots extends TestBase {
     }
     /*
      * How do you capture screenshot in your automation framework?
-     * how do you get screenshot in selenium ?
+     * how do you get screenshot in selenium ?Ss
      * I can use getScreenshotAs() method to capture the screenshot
      * Actually we will have reusable methods for screenshots.
      * */

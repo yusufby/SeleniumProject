@@ -55,7 +55,6 @@ public class Day04_xpath_css {
         //Functional testing :smoke test, regression test and security testing
         /*Selenium can be used to test UI, API and Database testing */
 
-
         //we can copy the relative xpath using chrome dev tool.it is not recommended
         /*because chrome can give the combination of ABSOLUTE and RELATIVE*/
         // * means any

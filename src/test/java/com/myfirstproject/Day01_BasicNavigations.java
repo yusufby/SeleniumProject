@@ -78,7 +78,7 @@ public class Day01_BasicNavigations {
 
         /*Pom.eml is the most important file on the maven project.
         this file is used to manage projects.
-        this may have
+        this may haves
         dependencies
         plugins
         profiles
