@@ -19,7 +19,7 @@ public class Day02_GetPageSource {
         //test if amazon contains "Registry" on the homepage
         /*how to go to view page source*/
         String pageSource = driver.getPageSource();
-        System.out.println(pageSource);
+        //System.out.println(pageSource);
 
         if (pageSource.contains("Registry")) {
             System.out.println("PASSED");
