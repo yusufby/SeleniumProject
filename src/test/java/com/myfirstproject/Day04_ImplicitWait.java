@@ -34,5 +34,6 @@ public class Day04_ImplicitWait {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
         Thread.sleep(30000);//Hard wait. Waits for 30 seconds for no reason
+        /*when we use thread.sleep java wait, it will throw interruptedexception*/
     }
 }
