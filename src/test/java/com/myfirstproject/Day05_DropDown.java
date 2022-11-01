@@ -95,6 +95,8 @@ Not Equal Actual" if there are not 4 elements in the dropdown.*/
         Select select = new Select(dropdown);
         //3. select all options using getOptions()
         List<WebElement> allOptions = select.getOptions();
+        System.out.println("===============");
+        System.out.println(allOptions);
 
         for (WebElement eachOption : allOptions) {
 //            System.out.println(eachOption);
