@@ -46,5 +46,13 @@ public class Day08_FileExist {
     //once we have a good reusable code, then we should always use that code
     //easy debug
     //easy  maintenance
+    @Test
+    public void check(){
 
+     String homeDirectory="user.home";
+     String path=homeDirectory+"\\Desktop\\buyuk tesbihat.jpec";
+
+    boolean existssss=Files.exists(Paths.get(path));
+    Assert.assertTrue(existssss);
+    }
 }
