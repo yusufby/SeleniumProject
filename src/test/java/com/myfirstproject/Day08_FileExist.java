@@ -20,7 +20,7 @@ public class Day08_FileExist {
 
 //     Path of the image
         //String pathOfFile = homeDirectory+"/Desktop/logo.jpeg";
-       String pathOfFile = homeDirectory+"\\Desktop\\selenium.png";   //Windows
+       String pathOfFile = homeDirectory+"\\Downloads\\sample.png";   //Windows
 
         System.out.println(pathOfFile);///Users/techproed/Desktop/logo.jpeg
 
@@ -29,7 +29,7 @@ public class Day08_FileExist {
         Assert.assertTrue(isFileExist);//Pass is exist, Fail is not exist
 
     }
-
+        /*java nio library helps us to automate whether the file exists or not on desktop */
     @Test
     public void secondWay(){
         String filePath ="C:\\Users\\user\\Desktop\\selenium.png";
@@ -48,11 +48,22 @@ public class Day08_FileExist {
     //easy  maintenance
     @Test
     public void check(){
+        String homeDirectory=System.getProperty("user.home");
+        String pathOfFile=homeDirectory+"\\Downloads\\cucumber-Hypnotes_reports (1).html";
+        System.out.println(pathOfFile);
+        boolean fileExists=Files.exists(Paths.get(pathOfFile));
+        System.out.println(fileExists);
+        Assert.assertTrue(fileExists);
 
-     String homeDirectory="user.home";
-     String path=homeDirectory+"\\Desktop\\buyuk tesbihat.jpec";
-
-    boolean existssss=Files.exists(Paths.get(path));
-    Assert.assertTrue(existssss);
     }
+
+    @Test
+    public void exist3(){
+        String homeDirectory=System.getProperty("user.home");
+        String path=homeDirectory+"\\Downloads\\sample.png";
+        boolean pathexist=Files.exists(Paths.get(path));
+        Assert.assertTrue(pathexist);
+
+    }
+
 }

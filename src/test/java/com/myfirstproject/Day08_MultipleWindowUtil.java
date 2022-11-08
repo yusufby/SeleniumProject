@@ -19,5 +19,14 @@ public class Day08_MultipleWindowUtil extends TestBase {
         System.out.println("New Window : "+ driver.getCurrentUrl());
 
     }
+    @Test
+    public void deneme2(){
+        driver.get("https://the-internet.herokuapp.com/windows");
+        System.out.println("old url" + driver.getCurrentUrl());
+        driver.findElement(By.xpath("//a[@href='/windows/new']")).click();
+
+        switchToTargetWindow("New Window");
+        System.out.println("new window" + driver.getCurrentUrl());
+    }
 
 }

@@ -39,6 +39,20 @@ public class Day08_FileUpload extends TestBase {
          * */
 
     }
+
+    @Test
+    public void deneme(){
+        driver.get("https://the-internet.herokuapp.com/upload");
+        WebElement chooseFile=driver.findElement(By.id("file-upload"));
+        String path="C:\\Users\\user\\Downloads\\sample.png";
+        chooseFile.sendKeys(path);
+        WebElement download=driver.findElement(By.id("file-submit"));
+        download.click();
+        WebElement uploaded=driver.findElement(By.xpath("//*[text()='File Uploaded!']"));
+        Assert.assertEquals("File Uploaded!", uploaded.getText());
+
+
+    }
 }
 /*Maven build life cycle */
 //validate:make sure project is correct and necessary information is available
