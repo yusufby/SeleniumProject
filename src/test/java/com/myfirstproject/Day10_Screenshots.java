@@ -56,6 +56,7 @@ public class Day10_Screenshots extends TestBase {
 
 
         driver.get("https://www.google.com");
+        driver.findElement(By.xpath("//*[text()='Accept all']")).click();
        takeScreenShot();
 
       driver.findElement(By.name("q")).sendKeys("Adana kebap" + Keys.ENTER);
@@ -69,8 +70,5 @@ public class Day10_Screenshots extends TestBase {
      * I can use getScreenshotAs() method to capture the screenshot
      * Actually we will have reusable methods for screenshots.
      * */
-
-
-
 
 }
