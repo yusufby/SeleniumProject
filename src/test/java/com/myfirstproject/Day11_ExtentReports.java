@@ -39,7 +39,7 @@ SET UP
 
 //        Add custom information
         extentReports.setSystemInfo("Environment","Test Environment");
-        extentReports.setSystemInfo("Browser","Chrome");
+        extentReports.setSystemInfo("Browser","FireFox");
         extentReports.setSystemInfo("Application","TechProEd");
         extentReports.setSystemInfo("SQA","John");
         extentHtmlReporter.config().setDocumentTitle("TechProEd BlueCar");

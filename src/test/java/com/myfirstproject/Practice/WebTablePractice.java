@@ -3,6 +3,7 @@ package com.myfirstproject.Practice;
 import com.myfirstproject.utilities.TestBase;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public class WebTablePractice  extends TestBase {
             System.out.println(each.getText());
         }
 
+        System.out.println(driver.manage().window().getSize());
+        driver.manage().window().setSize(new Dimension(1024, 768));
     }
 
 }
